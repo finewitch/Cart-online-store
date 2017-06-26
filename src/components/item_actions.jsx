@@ -1,12 +1,19 @@
-import React from 'react';  
+import React from 'react';
+import Button from './item_btn_frame.jsx';
 
-var Button = (props) => ( 
-  <button className="btn btn-default"  {...props}>
-  {props.icon ? <span className={ "glyphicon glyphicon-" + props.icon }></span> :  null }
-  {' '}
-  {props.label}
-  </button> )
-
-
-
-export default Button;
+export default class ItemActions extends React.Component {
+    render() {
+        let button = <Button label="add to favorites" icon="heart-empty" onClick={()=> this.props.addToFav(this.props.item)} />;
+        for(var i = 0; i < this.props.favList.length; i++) {
+            if(this.props.item == this.props.favList[i]) {
+                button = <Button label="" icon="heart" className="btn btn-fav" onClick={()=> this.props.addToFav(this.props.item)} />;
+            }
+        }
+        return(
+            <div className="btn-group pull-right">
+				    <Button label="more details" />
+				    {button}
+				  </div>
+        )
+    }
+}

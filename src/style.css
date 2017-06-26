@@ -1,34 +1,121 @@
 body{
-	font-family: 'Lato', sans-serif;
-	font-size:16px;
+	font-family: 'Merriweather', serif;
+	font-size:14px;
+	background: #FBF8F8;
 }
-.table{
-	width:200px;
-}
+/*media queries*/
 @media (min-width: 1200px){
 .container {
-    width: 970px;
+    /*width: 1070px;*/
 }
-.media:first-child{
-	margin-top: 15px;
 }
-.media-body, .media-left, .media-right {
-    display: table-cell;
-    vertical-align: middle;
+#root{
+	width: 100%;
 }
-.media{
-	margin: 15px 0px 15px 0px;
-	padding: 10px;
-	border: 4px solid #eee;
-	background: #F8FFF8;
+/*main-container*/
+.wrapper{
+	width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
 }
-.media-right{
-
+.flex-container{
+	display: flex;
 }
-.media-right, .media>.pull-right {
-    padding: 20px;
+.flex-container h1{
+	text-align: center;
 }
-
+.favoritesList{
+	flex: 1 0;
+}
+.items{
+	flex: 1 500px;
+	padding: 0 20px 0 20px;
+}
+.itemsInCart{
+	flex: 1 0;
+}
+.flex-container>div{
+	flex-grow: 1;
+	}
+/*item*/
+.item-container{
+	border: 1px solid #DFC7C7;
+	display: flex;
+	background: #FBFAF8;
+	margin-bottom: 40px;
+	box-shadow: 5px 5px 5px #eee;
+}
+.item-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.item-details-wrapper{
+	display: flex;
+}
+.item-pic{
+	display: flex;
+	align-items: center;
+	padding: 15px;
+}
+.item-details-box{
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+.price-label{
+	color: #E76F47;
+	font-size: 1.8em;
+}
+.item-details{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.total-price{
+	color: #E76F47;
+	font-size: 2.5em;
+}
+/*cart*/
+.cart{
+text-align: center;
+}
+.item-in-cart-price{
+	width: 50%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+/*buttons, etc - bootstrap overwrite*/
 .btn-group{
 	padding: 10px;
+}
+.glyphicon {
+	top:2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 10px;
+    }
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+/* btns related to fav-list */
+.btn-fav{
+	background: #ffaeae;
+	color: white;
+}
+.btn-in-fav{
+	background: #ffaeae;
+	margin-bottom: 10px;
 }

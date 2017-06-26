@@ -1,21 +1,10 @@
 import React from 'react';  
-import Button from'./item_actions.jsx';
-var ItemDetails = ({data}) => (
-
-          <div>
-            <table className="table">
-              <tbody>
-                <tr>
-                  <th>price</th>
-                  <td>{data.price} $</td>
-                </tr>
-                <tr>
-                  <th>more info...</th>
-                  <td>{data.extraInfo}</td>
-                </tr>
-              </tbody>
-            </table>
-            <Button label="Add" icon="shopping-cart" className="btn btn-success btn-block"/>
-          </div>
-          )
+import Button from'./item_btn_frame.jsx';
+var ItemDetails = (props) =>(
+		<div className="item-details-box">
+			<div className="price-label">{props.data.price}$</div>
+			<div>{props.data.extraInfo}</div>
+			<Button label="" icon="shopping-cart" className="btn btn-success" onClick = {()=>props.addToCart(props.data)}/>
+		</div>
+		)
 export default ItemDetails;
